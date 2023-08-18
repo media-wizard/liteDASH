@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
     size_t file_size = fread(buffer.get(), sizeof(char), buffer_sz, fp);
     if (file_size) {
       std::chrono::steady_clock::time_point begin = std::chrono::steady_clock::now();
-      mpdTree = dash_parser.Parse(buffer.get(), buffer_sz);
+      mpdTree = dash_parser.Parse(buffer.get(), buffer_sz, "https://www.hello.com/abcd/test.mpd");
       std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
       std::cout << "Parsing Took " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << "[µs]" << std::endl;
     }

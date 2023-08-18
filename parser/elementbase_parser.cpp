@@ -59,7 +59,7 @@ bool ElementBaseParser::ParseTextData(ElementBase *elem_out,
   return true;
 }
 bool ElementBaseParser::ParseEnd(const std::string &element_name,
-    ElementBase *elem_out) {
+    ElementBase *elem_out, const GetExternalAttributes &get_attribs) {
   return true;
 }
 

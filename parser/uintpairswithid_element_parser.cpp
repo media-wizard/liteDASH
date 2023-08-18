@@ -35,7 +35,7 @@ bool UIntPairsWithIDElementParser::ParseTextData(ElementBase *elem_out,
 }
 
 bool UIntPairsWithIDElementParser::ParseEnd(const std::string &element_name,
-    ElementBase *elem_out) {
+    ElementBase *elem_out, const GetExternalAttributes &get_attribs) {
   UIntPairsWithID *elem = static_cast<UIntPairsWithID*>(elem_out);
   std::vector < std::string > pairs;
   Utils::SplitStrValues(tmp_str_, ',', pairs);

@@ -53,5 +53,11 @@ bool Utils::ConvertToBool(const std::string &in_str) {
       (in_str == "true" || in_str == "TRUE" || in_str == "True") ? true : false;
 }
 
+std::string Utils::GetBasePath(const std::string &url)
+{
+    int pos = url.find_last_of('/');
+    return url.substr(0, pos);
+}
+
 } // namespace mpd
 } // namespace dash

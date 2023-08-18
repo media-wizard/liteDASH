@@ -76,7 +76,7 @@ bool MPDElementParser::ParseStart(const std::string &element_name,
 }
 
 bool MPDElementParser::ParseEnd(const std::string &element_name,
-    ElementBase *elem_out) {
+    ElementBase *elem_out, const GetExternalAttributes &get_attribs) {
   if (element_name == "Location") {
     MPD *elem = static_cast<MPD*>(elem_out);
     elem->locations_.push_back(tmp_location_);

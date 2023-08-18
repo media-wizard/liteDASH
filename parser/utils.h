@@ -21,6 +21,7 @@ class Utils {
     static void SplitUIntValues(const std::string &in_str, const char delim,
         std::vector<uint32_t> &out_vec);
     static bool ConvertToBool(const std::string &in_str);
+    static std::string GetBasePath(const std::string &url);
 };
 
 } // namespace mpd

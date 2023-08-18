@@ -40,7 +40,7 @@ bool UIntVWithIDElementParser::ParseTextData(ElementBase *elem_out,
 }
 
 bool UIntVWithIDElementParser::ParseEnd(const std::string &element_name,
-    ElementBase *elem_out) {
+    ElementBase *elem_out, const GetExternalAttributes &get_attribs) {
   UIntVWithID *elem = static_cast<UIntVWithID*>(elem_out);
   Utils::SplitUIntValues(list_str_, ',', elem->list_);
   list_str_.clear();

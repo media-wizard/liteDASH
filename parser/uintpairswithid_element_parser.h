@@ -21,8 +21,8 @@ class UIntPairsWithIDElementParser: public ElementBaseParser {
         const char **attrib) override;
     bool ParseTextData(ElementBase *elem_out, const std::string sub_element,
         const char *content, int length) override;
-    bool ParseEnd(const std::string &element_name, ElementBase *elem_out)
-        override;
+    bool ParseEnd(const std::string &element_name, ElementBase *elem_out,
+                        const GetExternalAttributes &get_attribs) override;
     ElementBase* CreateElement(const std::string &element) const override;
 
   private:

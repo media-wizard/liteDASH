@@ -10,6 +10,7 @@
 
 #define IF_ATTRIB_MATCHES(pattern) if (!std::strcmp(pattern,  attrib[i]))
 
+#include <functional>
 #include <memory>
 #include <string>
 #include <unordered_map>
@@ -20,6 +21,8 @@ namespace mpd {
 
 class ElementBase;
 
+typedef std::function<const std::string&(const std::string&)> GetExternalAttributes;
+
 class ElementBaseParser {
   public:
     ElementBaseParser(const std::string &element_name,
@@ -29,7 +32,7 @@ class ElementBaseParser {
     virtual bool ParseStart(const std::string &element_name,
         ElementBase *elem_out, const char **attrib);
     virtual bool ParseEnd(const std::string &element_name,
-        ElementBase *elem_out);
+        ElementBase *elem_out, const GetExternalAttributes &get_attribs);
     virtual bool ParseTextData(ElementBase *elem_out,
         const std::string sub_element, const char *content, int length);
     virtual ElementBase* CreateElement(const std::string &element) const;
