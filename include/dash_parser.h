@@ -19,7 +19,7 @@ class DASHParser {
   public:
     DASHParser();
     ~DASHParser();
-    std::unique_ptr<MPD> Parse(char *buff, size_t buff_size);
+    std::unique_ptr<MPD> Parse(char *buff, size_t buff_size, const std::string &mpd_url);
 
   private:
     class InternalParser;

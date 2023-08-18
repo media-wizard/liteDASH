@@ -45,11 +45,11 @@ bool BaseURLElementParser::ParseTextData(ElementBase *elem_out,
 }
 
 bool BaseURLElementParser::ParseEnd(const std::string &element_name,
-    ElementBase *elem_out) {
-  // BaseUrl *elem = static_cast<BaseUrl *>(elem_out);
-  // if (elem->url_ == "./") {
-  // 	elem->url_ = mpd_url; //TODO: It should be MPD path
-  // }
+    ElementBase *elem_out, const GetExternalAttributes &get_attribs) {
+  BaseUrl *elem = static_cast<BaseUrl *>(elem_out);
+  if (elem->url_ == "./") {
+    elem->url_ = get_attribs("mpd_path");
+  }
   return true;
 }
 

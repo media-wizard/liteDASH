@@ -19,8 +19,8 @@ class BaseURLElementParser: public ElementBaseParser {
   public:
     bool ParseStart(const std::string &element_name, ElementBase *elem_out,
         const char **attrib) override;
-    bool ParseEnd(const std::string &element_name, ElementBase *elem_out)
-        override;
+    bool ParseEnd(const std::string &element_name, ElementBase *elem_out,
+                        const GetExternalAttributes &get_attribs) override;
     bool ParseTextData(ElementBase *elem_out, const std::string sub_element,
         const char *content, int length) override;
     ElementBase* CreateElement(const std::string &element) const override;

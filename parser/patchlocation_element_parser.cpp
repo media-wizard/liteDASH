@@ -34,11 +34,11 @@ bool PatchLocationElementParser::ParseTextData(ElementBase *elem_out,
 }
 
 bool PatchLocationElementParser::ParseEnd(const std::string &element_name,
-    ElementBase *elem_out) {
-  // PatchLocation *elem = static_cast<PatchLocation *>(elem_out);
-  // if (elem->url == "./") {
-  // 	elem->url = mpd_url; //TODO: It should be MPD path
-  // }
+    ElementBase *elem_out, const GetExternalAttributes &get_attribs) {
+  PatchLocation *elem = static_cast<PatchLocation *>(elem_out);
+  if (elem->url_ == "./") {
+    elem->url_ = get_attribs("mpd_path");
+  }
   return true;
 }
 
