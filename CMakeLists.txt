@@ -31,3 +31,5 @@ set_target_properties(test PROPERTIES
     CXX_STANDARD 17
     CXX_EXTENSIONS TRUE
 )
+
+add_subdirectory (unit_tests)
