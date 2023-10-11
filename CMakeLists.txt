@@ -17,7 +17,9 @@ set_target_properties(ltDash PROPERTIES
     CXX_EXTENSIONS TRUE
 )
 
-
+target_compile_options(ltDash PRIVATE
+    -fPIC
+)
 
 file(GLOB SOURCES "test/*.cpp")
 
