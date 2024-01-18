@@ -17,7 +17,7 @@ bool TimelineElementParser::ParseStart(const std::string &element_name,
   Timeline *timeline = static_cast<Timeline*>(elem_out);
   for (int i = 0; attrib[i]; i += 2) {
     IF_ATTRIB_MATCHES("t") {
-      timeline->t_ = strtoul(attrib[i + 1], NULL, 10);
+      timeline->t_ = strtoull(attrib[i + 1], NULL, 10);
     } else IF_ATTRIB_MATCHES("d") {
       timeline->d_ = strtoul(attrib[i + 1], NULL, 10);
     } else IF_ATTRIB_MATCHES("r") {

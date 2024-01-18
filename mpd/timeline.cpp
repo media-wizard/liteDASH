@@ -15,7 +15,7 @@ Timeline::Timeline() :
     t_(0), n_(0), d_(0), r_(0), k_(0) {
 }
 
-uint32_t Timeline::GetStartTime() const {
+uint64_t Timeline::GetStartTime() const {
   return t_;
 }
 

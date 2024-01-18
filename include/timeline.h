@@ -16,12 +16,12 @@ namespace mpd {
 class Timeline: public ElementBase {
   public:
     Timeline();
-    uint32_t GetStartTime() const;
+    uint64_t GetStartTime() const;
     uint32_t GetDuration() const;
     uint32_t GetRepeatCount() const;
 
   private:
-    uint32_t t_;
+    uint64_t t_;
     uint32_t n_;
     uint32_t d_;
     uint32_t r_;
