@@ -56,7 +56,7 @@ bool Utils::ConvertToBool(const std::string &in_str) {
 std::string Utils::GetBasePath(const std::string &url)
 {
     int pos = url.find_last_of('/');
-    return url.substr(0, pos);
+    return url.substr(0, pos + 1);
 }
 
 } // namespace mpd
