@@ -22,11 +22,13 @@ class ElementBase {
     const std::string& GetName() const;
     const std::vector<ElementBase*> GetRawChildElements() const;
     const std::map<std::string, std::string> GetRawAttributes() const;
+    const std::string& GetRawInnerText() const;
 
   private:
     std::string name_;
     std::vector<ElementBase*> raw_child_elements_;
     std::map<std::string, std::string> raw_attribs_;
+    std::string raw_inner_text_;
 
     friend class ElementBaseParser;
 };
