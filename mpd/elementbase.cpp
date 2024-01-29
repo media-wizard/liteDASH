@@ -31,5 +31,9 @@ const std::map<std::string, std::string> ElementBase::GetRawAttributes() const {
   return raw_attribs_;
 }
 
+const std::string& ElementBase::GetRawInnerText() const {
+  return raw_inner_text_;
+}
+
 } // namespace mpd
 } // namespace dash

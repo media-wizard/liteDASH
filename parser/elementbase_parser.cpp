@@ -56,6 +56,8 @@ bool ElementBaseParser::ParseStart(const std::string &element_name,
 
 bool ElementBaseParser::ParseTextData(ElementBase *elem_out,
     const std::string sub_element, const char *content, int length) {
+  ElementBase *elem = static_cast<ElementBase*>(elem_out);
+  elem->raw_inner_text_.append(content, length);
   return true;
 }
 bool ElementBaseParser::ParseEnd(const std::string &element_name,
