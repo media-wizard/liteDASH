@@ -17,7 +17,7 @@ bool EventElementParser::ParseStart(const std::string &element_name,
   Event *elem = static_cast<Event*>(elem_out);
   for (int i = 0; attrib[i]; i += 2) {
     IF_ATTRIB_MATCHES("presentationTime") {
-      elem->presentation_time_ = strtoul(attrib[i + 1], NULL, 10);
+      elem->presentation_time_ = strtoull(attrib[i + 1], NULL, 10);
     } else IF_ATTRIB_MATCHES("duration") {
       elem->duration_ = attrib[i + 1];
     } else IF_ATTRIB_MATCHES("id") {

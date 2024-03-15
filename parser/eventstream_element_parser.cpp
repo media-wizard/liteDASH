@@ -30,7 +30,7 @@ bool EventStreamElementParser::ParseStart(const std::string &element_name,
     } else IF_ATTRIB_MATCHES("timescale") {
       elem->timescale_ = strtoul(attrib[i + 1], NULL, 10);
     } else IF_ATTRIB_MATCHES("presentationTimeOffset") {
-      elem->presentation_time_offset_ = strtoul(attrib[i + 1], NULL, 10);
+      elem->presentation_time_offset_ = strtoull(attrib[i + 1], NULL, 10);
     } else {
       const char *tmp_attribs[3] = { attrib[i], attrib[i + 1], nullptr };
       ElementBaseParser::ParseStart(element_name, elem_out, tmp_attribs);

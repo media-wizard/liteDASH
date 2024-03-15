@@ -19,7 +19,7 @@ bool ModelPairElementParser::ParseStart(const std::string &element_name,
     IF_ATTRIB_MATCHES("bufferTime") {
       elem->buffer_time_ = attrib[i + 1];
     } else IF_ATTRIB_MATCHES("bandwidth") {
-      elem->band_width_ = strtoul(attrib[i + 1], NULL, 10);
+      elem->band_width_ = strtoull(attrib[i + 1], NULL, 10);
     } else {
       const char *tmp_attribs[3] = { attrib[i], attrib[i + 1], nullptr };
       ElementBaseParser::ParseStart(element_name, elem_out, tmp_attribs);

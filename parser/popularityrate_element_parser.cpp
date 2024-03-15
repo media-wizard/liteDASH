@@ -21,7 +21,7 @@ bool PopularityRateElementParser::ParseStart(const std::string &element_name,
     IF_ATTRIB_MATCHES("popularityRate") {
       elem->popularity_rate_ = strtoul(attrib[i + 1], NULL, 10);
     } else IF_ATTRIB_MATCHES("start") {
-      elem->start_ = strtoul(attrib[i + 1], NULL, 10);
+      elem->start_ = strtoull(attrib[i + 1], NULL, 10);
     } else IF_ATTRIB_MATCHES("r") {
       elem->r_ = strtoul(attrib[i + 1], NULL, 10);
     } else {

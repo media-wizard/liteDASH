@@ -30,9 +30,9 @@ bool SegmentBaseElementParser::ParseStart(const std::string &element_name,
     } else IF_ATTRIB_MATCHES("pdDelta") {
       elem->pd_delta_ = (int) strtoul(attrib[i + 1], NULL, 10);
     } else IF_ATTRIB_MATCHES("presentationTimeOffset") {
-      elem->presentation_time_offset_ = strtoul(attrib[i + 1], NULL, 10);
+      elem->presentation_time_offset_ = strtoull(attrib[i + 1], NULL, 10);
     } else IF_ATTRIB_MATCHES("presentationDuration") {
-      elem->presentation_duration_ = strtoul(attrib[i + 1], NULL, 10);
+      elem->presentation_duration_ = strtoull(attrib[i + 1], NULL, 10);
     } else IF_ATTRIB_MATCHES("timeShiftBufferDepth") {
       elem->time_shift_buffer_depth_ = attrib[i + 1];
     } else IF_ATTRIB_MATCHES("indexRange") {
