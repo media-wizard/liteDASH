@@ -1,5 +1,6 @@
-project (DASH)
 cmake_minimum_required (VERSION 3.10)
+
+project (DASH)
 
 
 find_package(EXPAT REQUIRED)

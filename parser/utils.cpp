@@ -7,6 +7,7 @@
 
 #include <stdlib.h>     /* strtoul */
 #include "utils.h"
+#include <cstdint>
 
 namespace dash {
 namespace mpd {
